@@ -1,0 +1,1 @@
+java -jar do-your-work-1.0.0.jar
