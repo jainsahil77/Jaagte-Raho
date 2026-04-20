@@ -2,23 +2,18 @@ package pvt.sj.keep.alive.impl;
 
 import java.awt.AWTException;
 import java.awt.Robot;
-import java.awt.event.KeyEvent;
 
 import pvt.sj.keep.alive.KeepAlive;
 import pvt.sj.keep.alive.common.CommonUtil;
 
 /** @author sahil.jain */
-public class AltTab implements KeepAlive {
+public class Mouse implements KeepAlive {
     @Override
     public void start() throws AWTException, InterruptedException {
-        Thread.sleep(50000);
-        long sleepTime = CommonUtil.LONG_50 * CommonUtil.LONG_1000;
         Robot robot = new Robot();
+        long sleepTime = CommonUtil.LONG_50 * CommonUtil.LONG_1000;
         while (CommonUtil.BOOL_TRUE) {
-            robot.keyPress(KeyEvent.VK_ALT);
-            robot.keyPress(KeyEvent.VK_TAB);
-            robot.keyRelease(KeyEvent.VK_TAB);
-            robot.keyRelease(KeyEvent.VK_ALT);
+            CommonUtil.moveMouse(robot);
             Thread.sleep(sleepTime);
         }
     }

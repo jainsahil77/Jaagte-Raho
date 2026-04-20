@@ -13,8 +13,6 @@ public class CommonUtil {
         KEY_AND_MOUSE, ALT_TAB
     }
 
-    public static final long LONG_90 = 90L;
-    public static final long LONG_60 = 60L;
     public static final long LONG_50 = 50L;
     public static final long LONG_1000 = 1000L;
     public static final boolean BOOL_TRUE = true;
@@ -49,15 +47,9 @@ public class CommonUtil {
      *
      * @param robot
      *         Instance of AWT Robot class.
-     * @param iteration
-     *         Long value for deciding mouse location.
-     * @return sleep time.
      */
-    public static long moveMouse(Robot robot, long iteration) {
-        long sleepTime;
+    public static void moveMouse(Robot robot) {
         Point currentMouseLocation = MouseInfo.getPointerInfo().getLocation();
         robot.mouseMove(currentMouseLocation.x + 1, currentMouseLocation.y + 1);
-        sleepTime = CommonUtil.LONG_50 * CommonUtil.LONG_1000;
-        return sleepTime;
     }
 }
